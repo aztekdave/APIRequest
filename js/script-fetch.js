@@ -8,7 +8,7 @@
 // Fetch request
 (function() {
         var url = "https://api.darksky.net/forecast/c8afa7ff44a55b460e4bc20e18ecf071/45.394110,-92.814830";
-    	var apiKey = "c8afa7ff44a55b460e4bc20e18ecf071"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work
+    	var apiKey = "c8afa7ff44a55b460e4bc20e18ecf071";
         
         fetch(url).then(function(response) {
             if(!response.ok) {
@@ -22,10 +22,10 @@
         });
         // handle XHR success
     function updateUISuccess(response) {
-        // var condition = response.data[0].temperature;
+        // var condition = response.main[0].temp;
         // var degC = response.main.temp - 273.15;
         // var degCInt = Math.floor(degC);
-        var degF = response.data.temperature;
+        var degF = response.temperature;
         var degFInt = Math.floor(degF);
         var weatherBox = document.getElementById('weather');
         weatherBox.innerHTML = "<p>" + degFInt + "&#176; F</p>";

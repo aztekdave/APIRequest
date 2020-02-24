@@ -37,10 +37,10 @@
     // handle XHR success - weather
     function updateUISuccess(responseText) {
         var response = JSON.parse(responseText);
-        var condition = response.data[0].temperature;
+        var condition = response.temperature;
         // var degC = response.main.temp - 273.15;
         // var degCInt = Math.floor(degC);
-        var degF = response.data.temperature;
+        var degF = response.temperature;
         var degFInt = Math.floor(degF);
         var weatherBox = document.getElementById('weather');
         weatherBox.innerHTML = "<p>" + degFInt + "&#176; F</p>";
