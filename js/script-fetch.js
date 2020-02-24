@@ -27,8 +27,9 @@
         // var degCInt = Math.floor(degC);
         var degF = response.currently.temperature;
         var degFInt = Math.floor(degF);
+        var dew = response.currently.dewPoint;
         var weatherBox = document.getElementById('weather');
-        weatherBox.innerHTML = "<p>" + degFInt + "&#176; F</p>";
+        weatherBox.innerHTML = "<p>" + "Temperature " + degFInt + "&#176; F</p><p>" + "Dewpoint " + dew + "&#176; F</p>";
         // var condition = response.data[0].temperature;
         // var degC = response.main.temp - 273.15;
         // var degCInt = Math.floor(degC);
