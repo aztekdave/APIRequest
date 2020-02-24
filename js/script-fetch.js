@@ -20,27 +20,21 @@
         }).catch(function(error) {
             updateUIError();
         });
-        // handle XHR success
+
+// handle XHR success
     function updateUISuccess(response) {
-        // var condition = response.main[0].temp;
-        // var degC = response.main.temp - 273.15;
-        // var degCInt = Math.floor(degC);
+        var condition = response.currently.summary;
         var degF = response.currently.temperature;
         var degFInt = Math.floor(degF);
         var dew = response.currently.dewPoint;
+        var wind = response.currently.windSpeed;
         var weatherBox = document.getElementById('weather');
-        weatherBox.innerHTML = "<p>" + "Temperature " + degFInt + "&#176; F</p><p>" + "Dewpoint " + dew + "&#176; F</p>";
-        // var condition = response.data[0].temperature;
-        // var degC = response.main.temp - 273.15;
-        // var degCInt = Math.floor(degC);
-        // var degF = degC * 1.8 + 32;
-        // var degFInt = Math.floor(degF);
-        // var weatherBox = document.getElementById('weather');
-        // weatherBox.innerHTML = "<p>" + degCInt + "&#176; C / " + degFInt + "&#176; F</p><p>" + condition + "</p>";
+        weatherBox.innerHTML = "<p>" + "Sky " + condition + "</p><p>" + "Temperature " + degFInt + "&#176; F</p><p>" + 
+        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p>";
         console.log(response);
     }
    
-     // handle XHR error
+// handle XHR error
     function updateUIError() {
         var weatherBox = document.getElementById('weather');
         weatherBox.className = "hidden";
