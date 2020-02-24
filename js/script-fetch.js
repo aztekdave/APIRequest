@@ -25,7 +25,7 @@
         // var condition = response.main[0].temp;
         // var degC = response.main.temp - 273.15;
         // var degCInt = Math.floor(degC);
-        var degF = response.temperature;
+        var degF = response.currently.temperature;
         var degFInt = Math.floor(degF);
         var weatherBox = document.getElementById('weather');
         weatherBox.innerHTML = "<p>" + degFInt + "&#176; F</p>";
@@ -36,7 +36,9 @@
         // var degFInt = Math.floor(degF);
         // var weatherBox = document.getElementById('weather');
         // weatherBox.innerHTML = "<p>" + degCInt + "&#176; C / " + degFInt + "&#176; F</p><p>" + condition + "</p>";
+        console.log(response);
     }
+   
      // handle XHR error
     function updateUIError() {
         var weatherBox = document.getElementById('weather');
