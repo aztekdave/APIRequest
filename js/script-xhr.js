@@ -18,8 +18,8 @@
     function makeRequest() {
         httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = responseMethod;
-        httpRequest.open('GET', url + '&appid=' + apiKey);
-        
+        httpRequest.open('GET', url + '&appid=');
+        responseMethod();
     }
 
     // handle XHR response
