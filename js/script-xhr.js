@@ -18,7 +18,7 @@
         httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = responseMethod;
         httpRequest.open('GET', url);
-        responseMethod();
+        httpRequest.send();
     }
 
 // handle XHR response
@@ -26,6 +26,7 @@
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
                 updateUISuccess(httpRequest.responseText);
+           
             } else {
                 updateUIError();
             }
@@ -35,14 +36,16 @@
 
 // handle XHR success - weather
     function updateUISuccess(responseText) {
+        var response = JSON.parse(responseText);
         var condition = response.currently.summary;
         var degF = response.currently.temperature;
         var degFInt = Math.floor(degF);
         var dew = response.currently.dewPoint;
         var wind = response.currently.windSpeed;
+        var outlook = response.hourly.summary;
         var weatherBox = document.getElementById('weather');
         weatherBox.innerHTML = "<p>" + "Sky " + condition + "</p><p>" + "Temperature " + degFInt + "&#176; F</p><p>" + 
-        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p>";
+        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p><p>" + outlook + "</p>";
     }
 
 // handle XHR error

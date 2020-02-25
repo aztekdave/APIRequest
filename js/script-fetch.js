@@ -28,9 +28,10 @@
         var degFInt = Math.floor(degF);
         var dew = response.currently.dewPoint;
         var wind = response.currently.windSpeed;
+        var outlook = response.hourly.summary;
         var weatherBox = document.getElementById('weather');
         weatherBox.innerHTML = "<p>" + "Sky " + condition + "</p><p>" + "Temperature " + degFInt + "&#176; F</p><p>" + 
-        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p>";
+        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p><p>" + outlook + "</p>";
         console.log(response);
     }
    
