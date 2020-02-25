@@ -9,7 +9,7 @@
 
 (function() {
 	var url = "https://api.darksky.net/forecast/c8afa7ff44a55b460e4bc20e18ecf071/45.394110,-92.814830";
-	var apiKey = "c8afa7ff44a55b460e4bc20e18ecf071";
+	// var apiKey = "c8afa7ff44a55b460e4bc20e18ecf071";
     var httpRequest;
     makeRequest();
 
@@ -44,8 +44,8 @@
         var wind = response.currently.windSpeed;
         var outlook = response.hourly.summary;
         var weatherBox = document.getElementById('weather');
-        weatherBox.innerHTML = "<p>" + "Sky " + condition + "</p><p>" + "Temperature " + degFInt + "&#176; F</p><p>" + 
-        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p><p>" + outlook + "</p>";
+        weatherBox.innerHTML = "<p>" + "Sky: " + condition + "</p><p>" + "Temperature: " + degFInt + "&#176; F</p><p>" + 
+        "Dewpoint: " + dew + "&#176; F</p><p>" + "Wind: " + wind + "</p><p>" + outlook + "</p>";
     }
 
 // handle XHR error
