@@ -8,21 +8,20 @@
 "use strict";
 
 (function() {
-    // Weather for Center City
 	var url = "https://api.darksky.net/forecast/c8afa7ff44a55b460e4bc20e18ecf071/45.394110,-92.814830";
 	var apiKey = "c8afa7ff44a55b460e4bc20e18ecf071";
     var httpRequest;
     makeRequest();
 
-    // create and send an XHR request
+// create and send an XHR request
     function makeRequest() {
         httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = responseMethod;
-        httpRequest.open('GET', url + '&appid=');
+        httpRequest.open('GET', url);
         responseMethod();
     }
 
-    // handle XHR response
+// handle XHR response
     function responseMethod() {
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
@@ -34,19 +33,19 @@
         }
     }
 
-    // handle XHR success - weather
+// handle XHR success - weather
     function updateUISuccess(responseText) {
-        var response = JSON.parse(responseText);
-        var condition = response.temperature;
-        // var degC = response.main.temp - 273.15;
-        // var degCInt = Math.floor(degC);
-        var degF = response.temperature;
+        var condition = response.currently.summary;
+        var degF = response.currently.temperature;
         var degFInt = Math.floor(degF);
+        var dew = response.currently.dewPoint;
+        var wind = response.currently.windSpeed;
         var weatherBox = document.getElementById('weather');
-        weatherBox.innerHTML = "<p>" + degFInt + "&#176; F</p>";
+        weatherBox.innerHTML = "<p>" + "Sky " + condition + "</p><p>" + "Temperature " + degFInt + "&#176; F</p><p>" + 
+        "Dewpoint " + dew + "&#176; F</p><p>" + "Wind " + wind + "</p>";
     }
 
-    // handle XHR error
+// handle XHR error
     function updateUIError() {
         var weatherBox = document.getElementById('weather');
         weatherBox.className = "hidden";
