@@ -12,14 +12,30 @@ body {
 }
 
 body {
-  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(yellow), to(green));
-  background-image: linear-gradient(to right, red, yellow, green);
+  background-color: #181123;
 }
 
 #bob {
   font-size: 3em;
   font-family: dreadlock;
   text-align: center;
+}
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: red;
+  /* Create the gradient. */
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff0), color-stop(#f00), to(#0f0));
+  background-image: linear-gradient(to right, #ff0, #f00, #0f0);
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 
 #header img {
@@ -34,13 +50,15 @@ body {
   font-family: dreadlock;
   font-size: 1.5em;
   text-align: center;
-  color: #111;
+  color: #f00;
+  text-shadow: 5px 5px #0f0, 10px 10px #ff0;
 }
 
 #lyrics {
   font-size: 1.25em;
   font-family: "Roboto";
   margin: 0 17%;
+  color: #ff0;
 }
 
 .hidden {
