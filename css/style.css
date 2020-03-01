@@ -1,11 +1,46 @@
-@import url("https://fonts.googleapis.com/css?family=Trade+Winds&display=swap");
-*, html, body {
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@font-face {
+  font-family: dreadlock;
+  src: url(../fonts/Dreadlockfont.ttf);
+}
+
+*,
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #ccc;
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(yellow), to(green));
+  background-image: linear-gradient(to right, red, yellow, green);
+}
+
+#bob {
+  font-size: 3em;
+  font-family: dreadlock;
+  text-align: center;
+}
+
+#header img {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65%;
+}
+
+#title {
+  font-family: dreadlock;
+  font-size: 1.5em;
+  text-align: center;
+  color: #111;
+}
+
+#lyrics {
+  font-size: 1.25em;
+  font-family: "Roboto";
+  margin: 0 17%;
 }
 
 .hidden {
