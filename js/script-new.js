@@ -32,8 +32,8 @@ var song = "Redemption Song";
     function updateUISuccess(responseText) {
         var response = JSON.parse(responseText);
         var lyrics = response.lyrics;
-        var weatherBox = document.getElementById('lyrics');
-        weatherBox.innerHTML = "<p>" + lyrics + "</p>";
+        var lyricBox = document.getElementById('lyrics');
+        lyricBox.innerHTML = "<p>" + lyrics + "</p>";
     }
 
     // handle XHR error

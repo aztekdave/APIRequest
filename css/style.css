@@ -127,7 +127,7 @@ button:hover {
 #lyrics {
   font-size: 1.25em;
   font-family: 'Roboto';
-  margin: 0 17.5%;
+  margin: 0 17.5% 2em;
   color: #ff0;
 }
 
