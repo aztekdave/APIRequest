@@ -1,7 +1,9 @@
 "use strict";
 
+var song = "Redemption Song";
+
 (function () {
-    var url = "https://api.lyrics.ovh/v1/Bob Marley/Redemption Song";
+    var url = "https://api.lyrics.ovh/v1/Bob Marley/" + song + "";
     var httpRequest;
     makeRequest();
 
