@@ -1,14 +1,18 @@
 "use strict";
 
 var song = "Redemption Song";
+// var input = select('#song-title');
 
 (function () {
     var url = "https://api.lyrics.ovh/v1/Bob Marley/" + song + "";
+    // var url = "https://api.lyrics.ovh/v1/Bob Marley/" + input.value(); + "";
     var httpRequest;
     makeRequest();
 
     // create and send an XHR request
     function makeRequest() {
+        // var button = select('#submit');
+        // button.mousePressed(makeRequest);
         httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = responseMethod;
         httpRequest.open('GET', url);
@@ -28,7 +32,7 @@ var song = "Redemption Song";
         }
     }
 
-    // handle XHR success - weather
+    // handle XHR success
     function updateUISuccess(responseText) {
         var response = JSON.parse(responseText);
         var lyrics = response.lyrics;

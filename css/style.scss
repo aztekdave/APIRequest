@@ -10,6 +10,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -25,14 +26,9 @@ body {
 .gradient-text {
     /* Fallback: Set a background color. */
     background-color: red;
-    
-    /* Create the gradient. */
+    /* Gradient */
     background-image: linear-gradient(to right, #ff0, #f00, #0f0);
-    
-    /* Set the background size and repeat properties. */
     background-size: 100%;
-    // background-repeat: repeat;
-  
     /* Use the text as a mask for the background. */
     /* This will show the gradient as a text color rather than element bg. */
     -webkit-background-clip: text;
@@ -63,30 +59,22 @@ label {
     margin-right: 1em;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #f00;
-    opacity: 1; /* Firefox */
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: red;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: red;
-  }
-
 input {
-    padding: 7.5px 0;
-}
+    background: #ddd;
+    border: 2px solid #ddd;
+} 
 
 input:focus {
-    outline: 2px solid #f00;
+    outline: 3px solid #0f0;
+    background-color: #aaa;
 }
 
+input[type=text] {
+    padding: 7.5px 5px;
+  }
+
 button {
-    padding: 7px 10px;
-    // margin-top: 8px;
-    // margin-right: 16px;
+    padding: 7px 20px;
     background: #ddd;
     font-size: 17px;
     border: none;
@@ -97,16 +85,17 @@ button {
     background: #aaa;
   }
 
-#title {
-    clear: right;
-    font-family: dreadlock;
-    font-size: 1.5em;
-    text-align: center;
-    color: #f00;
-    text-shadow:  4px 4px #0f0, 8px 8px #ff0,;
-}
+// #title {
+//     clear: right;
+//     font-family: dreadlock;
+//     font-size: 1.5em;
+//     text-align: center;
+//     color: #f00;
+//     text-shadow:  4px 4px #0f0, 8px 8px #ff0,;
+// }
 
 #lyrics {
+    clear: right;
     font-size: 1.25em;
     font-family: 'Roboto';
     margin: 0 17.5% 2em;
