@@ -3,6 +3,7 @@
 var song = "Redemption Song";
 // var input = select('#song-title');
 
+
 (function () {
     var url = "https://api.lyrics.ovh/v1/Bob Marley/" + song + "";
     // var url = "https://api.lyrics.ovh/v1/Bob Marley/" + input.value(); + "";
@@ -35,6 +36,7 @@ var song = "Redemption Song";
     // handle XHR success
     function updateUISuccess(responseText) {
         var response = JSON.parse(responseText);
+        // var response = JSON.stringify(responseText);  // returns: undefined
         var lyrics = response.lyrics;
         var lyricBox = document.getElementById('lyrics');
         lyricBox.innerHTML = "<p>" + lyrics + "</p>";
