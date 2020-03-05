@@ -1,12 +1,12 @@
 "use strict";
 
 var song = "Redemption Song";
-// var input = select('#song-title');
+//var input = select('#song-title');
 
 
 (function () {
     var url = "https://api.lyrics.ovh/v1/Bob Marley/" + song + "";
-    // var url = "https://api.lyrics.ovh/v1/Bob Marley/" + input.value(); + "";
+    //var url = "https://api.lyrics.ovh/v1/Bob Marley/" + input.value(); + "";
     var httpRequest;
     makeRequest();
 
@@ -38,6 +38,13 @@ var song = "Redemption Song";
         var response = JSON.parse(responseText);
         // var response = JSON.stringify(responseText);  // returns: undefined
         var lyrics = response.lyrics;
+        var num = lyrics.length;
+        for (var i = 0; i< num; i++) {
+        var text = lyrics.indexOf("\n");
+        console.log(text);
+        }
+        console.log(text);
+        console.log(num);
         var lyricBox = document.getElementById('lyrics');
         lyricBox.innerHTML = "<p>" + lyrics + "</p>";
     }
