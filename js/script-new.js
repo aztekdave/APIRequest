@@ -39,12 +39,22 @@ var song = "Redemption Song";
         // var response = JSON.stringify(responseText);  // returns: undefined
         var lyrics = response.lyrics;
         var num = lyrics.length;
+        
         for (var i = 0; i< num; i++) {
-        var text = lyrics.indexOf("\n");
-        console.log(text);
+            //var didFind = false;
+        //var text = lyrics.indexOf("\n");
+       //lyrics.charAt(text) = "<br>";
+       lyrics.forEach(myFunction);
+            //text ="<br>";
+function myFunction(value) {
+
+}
+ 
+        //console.log(text);
+        console.log(typeof lyrics);
         }
-        console.log(text);
-        console.log(num);
+        //console.log(text);
+        //console.log(num);
         var lyricBox = document.getElementById('lyrics');
         lyricBox.innerHTML = "<p>" + lyrics + "</p>";
     }
