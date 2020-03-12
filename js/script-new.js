@@ -1,20 +1,19 @@
 "use strict";
 
 var song = "Redemption Song";
-// var song = "Three Little Birds";
 // var input = select('#song-title'); // search
 
 
 (function () {
     var url = "https://api.lyrics.ovh/v1/Bob Marley/" + song + "";
+    // var button = select('#submit'); // search
+    // button.mousePressed(makeRequest); // search
     // var url = "https://api.lyrics.ovh/v1/Bob Marley/" + input.value + ""; // search
     var httpRequest;
     makeRequest();
 
     // create and send an XHR request
     function makeRequest() {
-        // var button = select('#submit'); // search
-        // button.mousePressed(makeRequest); // search
         httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = responseMethod;
         httpRequest.open('GET', url);
